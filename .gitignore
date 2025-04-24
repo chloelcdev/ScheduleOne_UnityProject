@@ -76,3 +76,37 @@ Assets/Plugins/ScheduleOne/*.dll
 
 # The project is not launchable from editor
 .vscode/launch.json
+Assets/VideoClip
+Assets/TextMesh Pro
+Assets/TextAsset
+Assets/Texture2D
+Assets/Sprite
+Assets/Font
+Assets/AnimationClip
+Assets/AnimatorController
+Assets/AudioClip
+Assets/AudioMixerController
+Assets/Avatar
+Assets/BillboardAsset
+Assets/ComputeShader
+Assets/Cubemap
+Assets/Editor
+Assets/Font
+
+Assets/GameObject
+Assets/Material
+Assets/Mesh
+Assets/MonoBehaviour
+Assets/NavMeshData
+Assets/OcclusionCullingData
+Assets/PhysicMaterial
+Assets/Plugins
+Assets/RenderTexture*
+Assets/Resources
+Assets/ScheduleOneShaderFix
+Assets/Scripts
+Assets/Shader
+Assets/StreamingAssets
+Assets/TerrainData
+Assets/TerrainLayer
+Assets/Scenes
