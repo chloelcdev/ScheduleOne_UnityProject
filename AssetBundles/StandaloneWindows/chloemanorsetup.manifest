@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1740575358
+CRC: 717152859
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 94f677ef1c2bf3af6f9bacc6976aafdc
+    Hash: 6be880a8ab36a3360a44743d1ba098e5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 33d818da53a7b627df473cfc05944da7
+    Hash: 98beed1d3cd815d072d70760b8b3c18c
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 94f677ef1c2bf3af6f9bacc6976aafdc
+    Hash: 6be880a8ab36a3360a44743d1ba098e5
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -55,6 +55,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 80321dedd9e0754ae3177d620a2ee04c, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
@@ -64,6 +66,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: fb790b139ba0234b9a475839c9740137, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 032d0b58230633efb8de577d6e5187b9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 263e9b73fd0e17093ae57aebe5410df3, type: 3}
 - Class: 114
@@ -108,6 +112,7 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
+- Assets/Scenes/Main/NavMesh-Navigation1.asset
 - Assets/ManorMod/ManorSetup-Chloe.prefab
 - Assets/Scenes/Main/NavMesh-Extra Navigation1.asset
 - Assets/Scenes/Main/NavMesh-Extra Navigation3.asset
