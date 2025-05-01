@@ -1,0 +1,114 @@
+ManifestFileVersion: 0
+CRC: 1740575358
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 94f677ef1c2bf3af6f9bacc6976aafdc
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 33d818da53a7b627df473cfc05944da7
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 94f677ef1c2bf3af6f9bacc6976aafdc
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8d54a46e54755bbe9039417c0920799c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 106f8938ad54f2995efba67766e8a3b3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71dbbf0cc49dda1f7cfe949f9111a329, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bcf0dbf0867a916f59bfe909fda5596d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 80321dedd9e0754ae3177d620a2ee04c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4b351d52b07bae6ab425d4a278da0a97, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fb790b139ba0234b9a475839c9740137, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 032d0b58230633efb8de577d6e5187b9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 263e9b73fd0e17093ae57aebe5410df3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ee7403fe9187df6e6a9e363ff68c7b75, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fc71d2b8be11556cb80c3699e4220d6a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 20fce8cd5015fbf3430df912dbdc3571, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 238
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: ScheduleOne.Tiles.Coordinate
+- AssemblyName: Assembly-CSharp
+  ClassName: ScheduleOne.Tiles.CoordinateTilePair
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.ArgumentCache
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentListenerMode
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.FontData
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+Assets:
+- Assets/ManorMod/ManorSetup-Chloe.prefab
+- Assets/Scenes/Main/NavMesh-Extra Navigation1.asset
+- Assets/Scenes/Main/NavMesh-Extra Navigation3.asset
+Dependencies: []
