@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Loading dock decal mat any-white
+  m_Name: LoadingBayNumbers_10
   m_Shader: {fileID: -6465566751694194690, guid: 9b4e681081e2b4c469111bb649e2f7ee, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -78,7 +78,7 @@ Material:
     - _Cutoff: 0.5
     - _DecalAngleFadeSupported: 1
     - _DecalMeshBiasType: 0
-    - _DecalMeshDepthBias: 0
+    - _DecalMeshDepthBias: 1
     - _DecalMeshViewBias: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
