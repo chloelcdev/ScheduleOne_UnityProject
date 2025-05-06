@@ -1,11 +1,9 @@
 // GridGenerator.cs - MonoBehaviour to generate grid of IndoorTiles
 using UnityEngine;
-using UnityEditor;
-using ScheduleOne.Map;
 using ScheduleOne.Tiles;
 using Grid = ScheduleOne.Tiles.Grid;
 using System.Collections.Generic;
-using ScheduleOne.Tiles;
+using static UnityEngine.UI.Image;
 
 namespace ChloesManorMod
 {
@@ -13,8 +11,8 @@ namespace ChloesManorMod
     {
         public Grid targetGrid;
         public IndoorTile tilePrefab;
-        public int startX = 0;
-        public int startY = 0;
+        public int startX = 10;
+        public int startY = 10;
         public int countX = 10;
         public int countY = 10;
         public float tileSpacing = 0.5f;
@@ -24,13 +22,16 @@ namespace ChloesManorMod
         private void Start()
         {
             GenerateGrid();
+            if (obstacleLayerMask == default)
+                obstacleLayerMask = LayerMask.GetMask("GridBlock"); // Default to "Default" layer if not set
         }
 
         public void GenerateGrid()
         {
+            Debug.Log($"Generating grid {this.gameObject.name}");
             if (targetGrid == null)
             {
-                targetGrid = GetComponent<Grid>();
+                targetGrid = GetComponentInParent<Grid>();
                 if (targetGrid == null)
                 {
                     Debug.LogError("GridGenerator: No Grid reference found on GameObject.");
@@ -43,9 +44,14 @@ namespace ChloesManorMod
                 return;
             }
 
-            // Ensure Tiles list is initialized (don't clear existing tiles)
+            Debug.Log("Ensuring tile collections exist");
+
+            // Ensure Tile Collections are initialized (don't clear existing ones)
             if (targetGrid.Tiles == null)
                 targetGrid.Tiles = new();
+
+            if (targetGrid.CoordinateTilePairs == null)
+                targetGrid.CoordinateTilePairs = new();
 
             for (int x = 0; x < countX; x++)
             {
@@ -53,7 +59,11 @@ namespace ChloesManorMod
                 {
                     Vector3 localPosition = new Vector3(x * tileSpacing, 0f, y * tileSpacing);
                     GameObject tileGO;
-                    tileGO = PrefabUtility.InstantiatePrefab(tilePrefab.gameObject) as GameObject;
+#if UNITY_EDITOR
+                    tileGO = UnityEditor.PrefabUtility.InstantiatePrefab(tilePrefab.gameObject) as GameObject;
+#else
+                    tileGO = Instantiate(tilePrefab.gameObject);
+#endif
                     tileGO.transform.SetParent(transform);
                     tileGO.transform.localPosition = localPosition;
 
@@ -61,25 +71,17 @@ namespace ChloesManorMod
                     float half = tileSpacing * 0.5f;
                     Vector3 worldPos = tileGO.transform.position;
                     bool blocked = false;
-                    Vector3[] cornerOffsets = {
-                        new Vector3( half, 0f,  half),
-                        new Vector3(-half, 0f,  half),
-                        new Vector3( half, 0f, -half),
-                        new Vector3(-half, 0f, -half)
-                    };
-                    foreach (var offset in cornerOffsets)
-                    {
-                        Vector3 origin = worldPos + offset;
-                        if (Physics.OverlapBox(origin, Vector3.one * 0.1f, Quaternion.identity, obstacleLayerMask).Length > 0)
-                        {
-                            blocked = true;
-                            break;
-                        }
-                        
-                    }
+
+                    if (Physics.CheckBox(worldPos, Vector3.one * (tileSpacing * 0.5f), transform.rotation, obstacleLayerMask))
+                        blocked = true;
+
                     if (blocked)
                     {
+#if UNITY_EDITOR
                         DestroyImmediate(tileGO);
+#else
+                        Destroy(tileGO);
+#endif
                         continue;
                     }
 
@@ -89,7 +91,17 @@ namespace ChloesManorMod
                     indoorTile.OwnerGrid = targetGrid;
                     targetGrid.Tiles.Add(indoorTile);
 
-                    indoorTile.gameObject.name = $"Tile [{indoorTile.x},{indoorTile.y}]";
+                    Coordinate newcoord = new();
+                    newcoord.x = indoorTile.x;
+                    newcoord.y = indoorTile.y;
+
+                    targetGrid.CoordinateTilePairs.Add(new()
+                    {
+                        coord = newcoord,
+                        tile = indoorTile
+                    });
+
+                    indoorTile.gameObject.name = $"Tile [{indoorTile.x}, {indoorTile.y}]";
                 }
             }
 
@@ -103,20 +115,31 @@ namespace ChloesManorMod
             GridGenerator[] generators = targetGrid.GetComponentsInChildren<GridGenerator>();
 
 
+            Debug.Log("=== > Clearing grids...");
+
             foreach (var generator in generators)
             {
                 List<Transform> children = new();
                 foreach (Transform child in generator.transform)
                     children.Add(child);
 
-                foreach (Transform tile in children)
-                    if (tile?.gameObject != null)
-                        DestroyImmediate(tile.gameObject);
+                Debug.Log($"Grid child count: {children.Count}");
+
+#if UNITY_EDITOR
+                foreach (Transform child in children)
+                    if (child?.gameObject != null)
+                        DestroyImmediate(child.gameObject);
+#endif
+                Debug.Log($"Destroyed children - new count {children.Count}");
 
                 generator.targetGrid.Tiles.Clear();
                 generator.targetGrid.CoordinateTilePairs.Clear();
+
+                Debug.Log("Cleared Tiles and CoordinateTilePairs");
             }
 
+
+            Debug.Log("=== > Generating grids...");
             foreach (var generator in generators)
                 generator.GenerateGrid();
         }
