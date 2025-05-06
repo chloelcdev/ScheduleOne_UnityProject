@@ -561,7 +561,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 0
   webGLPowerPreference: 0
   scriptingDefineSymbols:
-    Standalone: HAS_URP_INSTALLED
+    Standalone: HAS_URP_INSTALLED;SKY_STUDIO_PRESENT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
